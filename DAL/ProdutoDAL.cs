@@ -10,7 +10,7 @@ namespace EstoqueMVC.DAL
 
        private string conectar()
        {
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsetting.json");//arquivo da string de conexao
+            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");//arquivo da string de conexao
 
             Configuration = builder.Build();
             return Configuration.GetConnectionString("conexao");//recebe a string de conexao no arquivo
@@ -53,6 +53,47 @@ namespace EstoqueMVC.DAL
             }
 
             return produtos;
+
+       }
+       
+       public bool inserirProduto(Produto produto)
+       {
+            SqlConnection conn = new SqlConnection(conectar());
+            int cadastrar;
+            bool result = false;
+
+            try
+            {
+                conn.Open();//abrir conexao
+                SqlCommand cmdo = new SqlCommand("inserirProduto", conn);//defini procedure
+                cmdo.CommandType = CommandType.StoredProcedure;
+                cmdo.Parameters.Add("@Nome", SqlDbType.VarChar,50).Value = produto.Nome;//parametros
+                cmdo.Parameters.Add("@Preco", SqlDbType.Decimal).Value = produto.Preco;
+                cmdo.Parameters.Add("@Quantidade", SqlDbType.Int).Value = produto.Quantidade;
+                cmdo.Parameters.Add("@Observacoes", SqlDbType.VarChar).Value = produto.Observacoes;
+
+                cadastrar = cmdo.ExecuteNonQuery();//recebe o resultado
+
+                if (cadastrar >= 1)
+                {
+                    result = true;
+                }
+                if (cadastrar < 1)
+                {
+                    result = false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();//fechar conexao
+            }
+
+            return result;
 
        }
 

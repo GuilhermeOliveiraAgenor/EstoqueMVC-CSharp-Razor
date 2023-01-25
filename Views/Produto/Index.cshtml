@@ -1,5 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<EstoqueMVC.Models.Produto>
+
 @{
+    Layout = null;
 }
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lista de produto</title>
+    </head>
+    <body>
+       <table>
+            <thead>
+                <tr>
+                    <th>Id Produto</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Observacoes</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var produto in Model)
+                {
+                    <tr>
+                        <td>
+                            @produto.idProduto
+                        </td>
+                        <td>
+                            @produto.Nome
+                        </td>
+                        <td>
+                            @produto.Preco
+                        </td>
+                        <td>
+                            @produto.Quantidade
+                        </td>
+                        <td>
+                            @produto.Observacoes
+                        </td>
+                    </tr>
+                }
+            </tbody>
+       </table>
+       <a asp-controller="Produto" asp-action="Cadastro">Cadastro</a>
+    </body>
+
+</html>
