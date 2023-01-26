@@ -39,6 +39,9 @@
                         <td>
                             @produto.Observacoes
                         </td>
+                        <td>
+                            <a asp-controller="Produto" asp-action="Alterar" asp-route-id="@produto.idProduto">Editar</a>
+                        </td>
                     </tr>
                 }
             </tbody>

@@ -1,5 +1,6 @@
 ﻿@{
     Layout = null;
+    var message = TempData["Message"]?.ToString();//variavel de mensagem
 }
 
 <!DOCTYPE html>
@@ -8,6 +9,12 @@
         <title>Cadastro de Produtos</title>
     </head>
     <body>
+        @if(!string.IsNullOrEmpty(message)){
+            <br />
+            <b>@message</b>
+            <br />
+            <br />
+        }
         <form method="post">
                 <label>Nome</label>
                 <input type="text" id="txtNome" name="txtNome"/>
@@ -23,6 +30,7 @@
                 <br />
                 <button type="submit" formaction = "Inserir" id="btnSalvar" name="btnSalvar">Salvar</button>
         </form>
+        <a asp-controller="Produto" asp-action="Index">Lista</a>
     </body>
 
 </html>

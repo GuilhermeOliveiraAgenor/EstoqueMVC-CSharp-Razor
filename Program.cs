@@ -1,7 +1,10 @@
+using EstoqueMVC.DAL;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ProdutoDAL>();
 
 var app = builder.Build();
 
