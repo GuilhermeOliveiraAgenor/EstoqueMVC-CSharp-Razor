@@ -49,9 +49,25 @@ namespace EstoqueMVC.Controllers
         }
         public IActionResult Alterar(int id)
         {
-            var produtos = produtoDAL.pesqProdutoCodigo(id);//passa o id selecionado para a variável
-
+            var produtos = produtoDAL.pesqProdutoCodigo(id).FirstOrDefault();
+            
             return View(produtos);
+        }
+
+        [HttpPost]
+        public IActionResult AlterarProduto(string idCodigo, string Nome, string Preco, string Quantidade, string Observacoes)
+        {
+            bool result;
+
+            produto.idProduto = Convert.ToInt32(idCodigo);
+            produto.Nome = Nome;
+            produto.Preco = Convert.ToDecimal(Preco);
+            produto.Quantidade = Convert.ToInt32(Quantidade);
+            produto.Observacoes = Observacoes;
+
+            result = produtoDAL.alterarProduto(produto);
+
+            return RedirectToAction("Index", "Produto");
         }
 
 
