@@ -55,19 +55,20 @@ namespace EstoqueMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult AlterarProduto(string idCodigo, string Nome, string Preco, string Quantidade, string Observacoes)
+        public IActionResult Alterar(string txtCodigo, string txtNome, string txtPreco, string txtQuantidade, string txtObservacoes)
         {
             bool result;
 
-            produto.idProduto = Convert.ToInt32(idCodigo);
-            produto.Nome = Nome;
-            produto.Preco = Convert.ToDecimal(Preco);
-            produto.Quantidade = Convert.ToInt32(Quantidade);
-            produto.Observacoes = Observacoes;
+            produto.idProduto = Convert.ToInt32(txtCodigo);
+            produto.Nome = txtNome;
+            produto.Preco = Convert.ToDecimal(txtPreco);
+            produto.Quantidade = Convert.ToInt32(txtQuantidade);
+            produto.Observacoes = txtObservacoes;
 
             result = produtoDAL.alterarProduto(produto);
 
             return RedirectToAction("Index", "Produto");
+
         }
 
 

@@ -105,7 +105,7 @@ namespace EstoqueMVC.DAL
             try
             {
                 conn.Open();
-                SqlCommand cmdo = new SqlCommand("alterProduto", conn);//defini procedure 
+                SqlCommand cmdo = new SqlCommand("alterarProduto", conn);//defini procedure 
                 cmdo.CommandType = CommandType.StoredProcedure;
                 cmdo.Parameters.Add("@idProduto", SqlDbType.Int).Value = produto.idProduto;//parametros
                 cmdo.Parameters.Add("@Nome", SqlDbType.VarChar, 50).Value = produto.Nome;
