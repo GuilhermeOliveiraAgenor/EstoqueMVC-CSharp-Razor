@@ -9,6 +9,7 @@ namespace EstoqueMVC.Controllers
     {
         ProdutoDAL produtoDAL = new ProdutoDAL();
         Produto produto = new Produto();
+        static int idProduto;
 
         public IActionResult Index()
         {
@@ -49,7 +50,9 @@ namespace EstoqueMVC.Controllers
         }
         public IActionResult Alterar(int id)
         {
-            var produtos = produtoDAL.pesqProdutoCodigo(id).FirstOrDefault();
+            idProduto = id;//passa o id selecionado para a variavel
+
+            var produtos = produtoDAL.pesqProdutoCodigo(idProduto).FirstOrDefault();
             
             return View(produtos);
         }
@@ -67,7 +70,47 @@ namespace EstoqueMVC.Controllers
 
             result = produtoDAL.alterarProduto(produto);
 
+            if (result == true)
+            {
+                TempData["Message"] = "Produto alterado com sucesso";
+                idProduto = 0;
+            }
+            else
+            {
+                TempData["Message"] = "Erro ao alterar produto";
+            }
+
             return RedirectToAction("Index", "Produto");
+
+        }
+
+        public IActionResult Excluir(int id)
+        {
+            idProduto = id;//passa o id selecionado para a variavel
+
+            var produtos = produtoDAL.pesqProdutoCodigo(idProduto).FirstOrDefault();
+
+            return View(produtos);
+        }
+
+        [HttpPost]
+        public IActionResult Excluir()
+        {
+            bool result;
+
+            result = produtoDAL.excluirProduto(idProduto);
+
+            if (result == true)
+            {
+                TempData["Message"] = "Produto excluído com sucesso";
+                idProduto = 0;
+            }
+            else
+            {
+                TempData["Message"] = "Erro ao excluir produto";
+            }
+
+            return RedirectToAction("Index","Produto");
 
         }
 

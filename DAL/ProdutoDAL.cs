@@ -178,6 +178,44 @@ namespace EstoqueMVC.DAL
 
 
        }
+       public bool excluirProduto(int id)
+       {
+            SqlConnection conn = new SqlConnection(conectar());
+            bool result = false;
+            int excluir;
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmdo = new SqlCommand("excluirProduto", conn);
+                cmdo.CommandType = CommandType.StoredProcedure;
+                cmdo.Parameters.Add("@idProduto", SqlDbType.Int).Value = id;
+
+                excluir = cmdo.ExecuteNonQuery();
+
+                if (excluir >= 1)
+                {
+                    result = true;
+                }
+                if (excluir < 1)
+                {
+                    result = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return result;
+
+       }
+
 
     }
 }

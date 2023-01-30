@@ -1,0 +1,32 @@
+﻿@model EstoqueMVC.Models.Produto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Excluir Produto</title>
+    </head>
+    <body>
+        <form method="post">
+            <label>Código</label>
+            <input type="text" id="txtCodigo" name="txtCodigo" value="@Model.idProduto" />
+            <br />
+            <label>Nome</label>
+            <input type="text" id="txtNome" name="txtNome" value="@Model.Nome"/>
+            <br />
+            <label>Preco</label>
+            <input type="text" id="txtPreco" name="txtPreco" value="@Model.Preco"/>
+            <br />
+            <label>Quantidade</label>
+            <input type="text" id="txtQuantidade" name="txtQuantidade" value="@Model.Quantidade"/>
+            <br />
+            <label>Observacoes</label>
+            <input type="text" id="txtObservacoes" name="txtObservacoes" value="@Model.Observacoes"/>
+            <br />
+            <button type="submit" id="btnExcluir" name="btnExcluir" formaction="Excluir">Excluir</button>
+        </form>
+    </body>
+</html>
