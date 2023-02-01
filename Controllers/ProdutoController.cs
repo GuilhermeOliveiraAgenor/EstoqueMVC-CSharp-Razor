@@ -18,6 +18,13 @@ namespace EstoqueMVC.Controllers
 
             return View(produtos);
         }
+        public IActionResult Pesquisa(string txtPesquisa)
+        {
+            List<Produto> produtos = 
+
+            return View ("Index", pesqCodigo);
+
+        }
         public IActionResult Cadastro()
         {
             return View();
