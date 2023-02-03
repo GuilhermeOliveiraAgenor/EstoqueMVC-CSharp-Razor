@@ -20,9 +20,18 @@ namespace EstoqueMVC.Controllers
         }
         public IActionResult Pesquisa(string txtPesquisa)
         {
-            List<Produto> produtos = 
+            List<Produto> produtos = produtoDAL.pesqProdutoCodigo(Convert.ToInt32(txtPesquisa));
 
-            return View ("Index", pesqCodigo);
+            if (produtos.Count >= 1)
+            {
+                TempData["Message"] = "Produto encontrado";
+            }
+            else
+            {
+                TempData["Message"] = "Erro ao encontrar produto";
+            }
+
+            return View("Index", produtos);
 
         }
         public IActionResult Cadastro()
