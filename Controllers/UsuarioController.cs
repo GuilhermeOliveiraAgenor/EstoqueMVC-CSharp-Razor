@@ -9,7 +9,13 @@ namespace EstoqueMVC.Controllers
     {
         Usuario usuario = new Usuario();
         UsuarioDAL usuarioDAL = new UsuarioDAL();
-        
+
+        private readonly IHttpContextAccessor session;
+        public UsuarioController(IHttpContextAccessor login)
+        {
+           session = login;
+        }
+
         public IActionResult Login()
         {
             return View();
@@ -27,6 +33,7 @@ namespace EstoqueMVC.Controllers
 
             if (dt.Rows.Count == 1)
             {
+                HttpContext.Session.SetString("Sessao","Ok");
                 return RedirectToAction("Index","Produto");
             }
             else
@@ -34,6 +41,13 @@ namespace EstoqueMVC.Controllers
                 TempData["Message"] = "Usuário ou senha inválidos";
                 return RedirectToAction("Login","Usuario");
             }
+        }
+
+        public IActionResult Logout()
+        {
+
+            HttpContext.Session.Remove("Sessao");
+            return RedirectToAction("Login","Usuario");
 
         }
 

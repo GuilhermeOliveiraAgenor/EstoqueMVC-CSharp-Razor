@@ -15,6 +15,7 @@ namespace EstoqueMVC.Controllers
         {
             List<Produto> produtos = new List<Produto>();
             produtos = produtoDAL.listarProduto();
+            TempData["Message"] = HttpContext.Session.GetString("Sessao");
 
             return View(produtos);
         }
@@ -36,7 +37,17 @@ namespace EstoqueMVC.Controllers
         }
         public IActionResult Cadastro()
         {
-            return View();
+
+            var sessao = HttpContext.Session.GetString("Sessao");
+
+            if (HttpContext.Session.GetString("Sessao") != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login","Usuario");
+            }
         }
 
         [HttpPost]
