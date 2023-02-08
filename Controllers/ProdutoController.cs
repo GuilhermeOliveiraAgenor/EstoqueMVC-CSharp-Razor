@@ -10,36 +10,44 @@ namespace EstoqueMVC.Controllers
         ProdutoDAL produtoDAL = new ProdutoDAL();
         Produto produto = new Produto();
         static int idProduto;
-
+        
         public IActionResult Index()
         {
             List<Produto> produtos = new List<Produto>();
-            produtos = produtoDAL.listarProduto();
-            TempData["Message"] = HttpContext.Session.GetString("Sessao");
 
-            return View(produtos);
+            if (HttpContext.Session.GetString("Sessao") != null)
+            {
+                produtos = produtoDAL.listarProduto();
+                return View(produtos);
+            }
+            else
+            {
+                return RedirectToAction("Login","Usuario");
+            }
         }
         public IActionResult Pesquisa(string txtPesquisa)
         {
             List<Produto> produtos = produtoDAL.pesqProdutoCodigo(Convert.ToInt32(txtPesquisa));
-
-            if (produtos.Count >= 1)
+            
+            if (HttpContext.Session.GetString("Sessao") != null)
             {
-                TempData["Message"] = "Produto encontrado";
+                if (produtos.Count >= 1)
+                {
+                    TempData["Message"] = "Produto encontrado";
+                }
+                else
+                {
+                    TempData["Message"] = "Erro ao encontrar produto";
+                }
+                return View("Index", produtos);
             }
             else
             {
-                TempData["Message"] = "Erro ao encontrar produto";
+                return RedirectToAction("Login","Usuario");
             }
-
-            return View("Index", produtos);
-
         }
         public IActionResult Cadastro()
         {
-
-            var sessao = HttpContext.Session.GetString("Sessao");
-
             if (HttpContext.Session.GetString("Sessao") != null)
             {
                 return View();
@@ -56,32 +64,48 @@ namespace EstoqueMVC.Controllers
         {
             bool result = false;
 
-            produto.Nome = txtNome;//parametro
-            produto.Preco = Convert.ToDecimal(txtPreco);
-            produto.Quantidade = Convert.ToInt32(txtQuantidade);
-            produto.Observacoes = txtObservacoes;
-
-            result = produtoDAL.inserirProduto(produto);//recebe o resultado
-
-            if (result == true)
+            if (HttpContext.Session.GetString("Sessao") != null)
             {
-                TempData["message"] = "Produto cadastrado com sucesso";
+                produto.Nome = txtNome;//parametro
+                produto.Preco = Convert.ToDecimal(txtPreco);
+                produto.Quantidade = Convert.ToInt32(txtQuantidade);
+                produto.Observacoes = txtObservacoes;
+
+                result = produtoDAL.inserirProduto(produto);//recebe o resultado
+
+                if (result == true)
+                {
+                    TempData["message"] = "Produto cadastrado com sucesso";
+                }
+                else
+                {
+                    TempData["message"] = "Erro ao cadastrar produto";
+                }
+
+                return RedirectToAction("Cadastro", "Produto");
+
             }
             else
             {
-                TempData["message"] = "Erro ao cadastrar produto";
+                return RedirectToAction("Login","Usuario");
             }
-
-            return RedirectToAction("Cadastro","Produto");
 
         }
         public IActionResult Alterar(int id)
         {
-            idProduto = id;//passa o id selecionado para a variavel
+            if (HttpContext.Session.GetString("Sessao") != null)
+            {
+                idProduto = id;//passa o id selecionado para a variavel
 
-            var produtos = produtoDAL.pesqProdutoCodigo(idProduto).FirstOrDefault();
-            
-            return View(produtos);
+                var produtos = produtoDAL.pesqProdutoCodigo(idProduto).FirstOrDefault();
+
+                return View(produtos);
+            }
+            else
+            {
+                return RedirectToAction("Login","Usuario");
+            }
+
         }
 
         [HttpPost]
@@ -89,35 +113,51 @@ namespace EstoqueMVC.Controllers
         {
             bool result;
 
-            produto.idProduto = Convert.ToInt32(txtCodigo);
-            produto.Nome = txtNome;
-            produto.Preco = Convert.ToDecimal(txtPreco);
-            produto.Quantidade = Convert.ToInt32(txtQuantidade);
-            produto.Observacoes = txtObservacoes;
-
-            result = produtoDAL.alterarProduto(produto);
-
-            if (result == true)
+            if (HttpContext.Session.GetString("Sessao") != null)
             {
-                TempData["Message"] = "Produto alterado com sucesso";
-                idProduto = 0;
+                produto.idProduto = Convert.ToInt32(txtCodigo);
+                produto.Nome = txtNome;
+                produto.Preco = Convert.ToDecimal(txtPreco);
+                produto.Quantidade = Convert.ToInt32(txtQuantidade);
+                produto.Observacoes = txtObservacoes;
+
+                result = produtoDAL.alterarProduto(produto);
+
+                if (result == true)
+                {
+                    TempData["Message"] = "Produto alterado com sucesso";
+                    idProduto = 0;
+                }
+                else
+                {
+                    TempData["Message"] = "Erro ao alterar produto";
+                }
+
+                return RedirectToAction("Index", "Produto");
+
             }
             else
             {
-                TempData["Message"] = "Erro ao alterar produto";
+                return RedirectToAction("Login","Usuario");    
             }
-
-            return RedirectToAction("Index", "Produto");
 
         }
 
         public IActionResult Excluir(int id)
         {
-            idProduto = id;//passa o id selecionado para a variavel
+            if (HttpContext.Session.GetString("Sessao") != null)
+            {
+                idProduto = id;//passa o id selecionado para a variavel
 
-            var produtos = produtoDAL.pesqProdutoCodigo(idProduto).FirstOrDefault();
+                var produtos = produtoDAL.pesqProdutoCodigo(idProduto).FirstOrDefault();
 
-            return View(produtos);
+                return View(produtos);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuario");
+            }
+
         }
 
         [HttpPost]
@@ -125,19 +165,26 @@ namespace EstoqueMVC.Controllers
         {
             bool result;
 
-            result = produtoDAL.excluirProduto(idProduto);
-
-            if (result == true)
+            if (HttpContext.Session.GetString("Sessao") != null)
             {
-                TempData["Message"] = "Produto excluído com sucesso";
-                idProduto = 0;
+                result = produtoDAL.excluirProduto(idProduto);
+
+                if (result == true)
+                {
+                    TempData["Message"] = "Produto excluído com sucesso";
+                    idProduto = 0;
+                }
+                else
+                {
+                    TempData["Message"] = "Erro ao excluir produto";
+                }
+
+                return RedirectToAction("Index", "Produto");
             }
             else
             {
-                TempData["Message"] = "Erro ao excluir produto";
+                return RedirectToAction("Login","Usuario");
             }
-
-            return RedirectToAction("Index","Produto");
 
         }
 

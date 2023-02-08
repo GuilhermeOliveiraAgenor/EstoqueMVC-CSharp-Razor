@@ -176,7 +176,6 @@ namespace EstoqueMVC.DAL
 
             return produtos;
 
-
        }
        public bool excluirProduto(int id)
        {
@@ -215,7 +214,6 @@ namespace EstoqueMVC.DAL
             return result;
 
        }
-
 
     }
 }
