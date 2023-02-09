@@ -1,6 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
 using EstoqueMVC.Models;
+using Microsoft.CodeAnalysis.Emit;
 
 namespace EstoqueMVC.DAL
 {
@@ -177,6 +178,86 @@ namespace EstoqueMVC.DAL
             return produtos;
 
        }
+
+       public List<Produto> pesqProdutoNome(string nome)
+        {
+            List<Produto> produtos = new List<Produto>();
+            SqlConnection conn = new SqlConnection(conectar());
+            SqlCommand cmdo = new SqlCommand();
+
+            try
+            {
+                conn.Open();
+                cmdo.Connection = conn;
+                cmdo.CommandType = CommandType.Text;
+                cmdo.CommandText = "select *from Produto where Nome like @Nome";
+                cmdo.Parameters.Add("@Nome", SqlDbType.VarChar, 50).Value = nome + "%";
+                SqlDataReader dr = cmdo.ExecuteReader();
+                while (dr.Read())
+                {
+                    produtos.Add(new Produto()
+                    {
+                        idProduto = Convert.ToInt32(dr["idProduto"]),
+                        Nome = dr["Nome"].ToString(),
+                        Preco = Convert.ToDecimal(dr["Preco"]),
+                        Quantidade = Convert.ToInt32(dr["Quantidade"]),
+                        Observacoes = dr["Observacoes"].ToString()
+                    });
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return produtos;
+
+        }
+        public List<Produto> pesqProdutoPreco(decimal preco)
+        {
+            List<Produto> produtos = new List<Produto>();
+            SqlConnection conn = new SqlConnection(conectar());
+            SqlCommand cmdo = new SqlCommand();
+
+            try
+            {
+                conn.Open();
+                cmdo.Connection = conn;
+                cmdo.CommandType = CommandType.Text;
+                cmdo.CommandText = "select *from Produto where Preco = @Preco";
+                cmdo.Parameters.Add("@Preco", SqlDbType.Decimal).Value = preco;
+                SqlDataReader dr = cmdo.ExecuteReader();
+                while(dr.Read())
+                {
+                    produtos.Add(new Produto()
+                    {
+                        idProduto = Convert.ToInt32(dr["idProduto"]),
+                        Nome = dr["Nome"].ToString(),
+                        Preco = Convert.ToDecimal(dr["Preco"]),
+                        Quantidade = Convert.ToInt32(dr["Quantidade"]),
+                        Observacoes = dr["Observacoes"].ToString()
+
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return produtos;
+
+        }
+
        public bool excluirProduto(int id)
        {
             SqlConnection conn = new SqlConnection(conectar());

@@ -1,4 +1,4 @@
-﻿@model List<EstoqueMVC.Models.Produto>
+﻿@model IEnumerable<EstoqueMVC.Models.Produto>
 
 @{
     Layout = null;
@@ -20,6 +20,16 @@
         }
         <form method="get">
             <input type="text" id="txtPesquisa" name="txtPesquisa"/>
+            <br />
+            <text>Codigo<text/>
+            <input type="radio" id="btnRadio" name="btnRadio" value="codigo"/>
+            <br />
+            <text>Nome</text>
+            <input type="radio" id="btnRadio" name="btnRadio" value="nome"/>
+            <br />
+            <text>Preço</text>
+            <input type="radio" id="btnRadio" name="btnRadio" value="preco"/>
+            <br />
             <button type="submit" value="Pesquisar" formaction="/Produto/Pesquisa" >Pesquisar</button>
         </form>
        <table>

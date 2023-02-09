@@ -25,19 +25,38 @@ namespace EstoqueMVC.Controllers
                 return RedirectToAction("Login","Usuario");
             }
         }
-        public IActionResult Pesquisa(string txtPesquisa)
+        public IActionResult Pesquisa(string txtPesquisa,string btnRadio)
         {
-            List<Produto> produtos = produtoDAL.pesqProdutoCodigo(Convert.ToInt32(txtPesquisa));
+            List<Produto> produtos = new List<Produto>();
             
             if (HttpContext.Session.GetString("Sessao") != null)
             {
-                if (produtos.Count >= 1)
+                if (btnRadio == "codigo")
                 {
-                    TempData["Message"] = "Produto encontrado";
+                    produtos = produtoDAL.pesqProdutoCodigo(Convert.ToInt32(txtPesquisa));
+
+                    if (produtos.Count < 1)
+                    {
+                        TempData["Message"] = "Erro ao encontrar produto";
+                    }
                 }
-                else
+                if (btnRadio == "nome")
                 {
-                    TempData["Message"] = "Erro ao encontrar produto";
+                    produtos = produtoDAL.pesqProdutoNome(txtPesquisa);
+
+                    if (produtos.Count < 1)
+                    {
+                        TempData["Message"] = "Erro ao encontrar produto";
+                    }
+                }
+                if (btnRadio == "preco")
+                {
+                    produtos = produtoDAL.pesqProdutoPreco(Convert.ToDecimal(txtPesquisa));
+
+                    if (produtos.Count < 1)
+                    {
+                        TempData["Message"] = "Erro ao encontrar produto";
+                    }
                 }
                 return View("Index", produtos);
             }
