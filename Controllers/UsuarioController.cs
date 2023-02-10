@@ -50,6 +50,34 @@ namespace EstoqueMVC.Controllers
             return RedirectToAction("Login","Usuario");
 
         }
+        public IActionResult Cadastro()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Inserir(string txtEmail, string txtNome, string txtSenha)
+        {
+            bool result = false;
+
+            usuario.Email = txtEmail;
+            usuario.Nome = txtNome;
+            usuario.Senha = txtSenha;
+
+            result = usuarioDAL.inserirUsuario(usuario);
+
+            if (result == true)
+            {
+                TempData["Message"] = "Usuario cadastrado com sucesso";
+            }
+            else
+            {
+                TempData["Message"] = "Erro ao cadastrar usuario";
+            }
+
+            return RedirectToAction("Cadastro","Usuario");
+        }
+
 
     }
 }

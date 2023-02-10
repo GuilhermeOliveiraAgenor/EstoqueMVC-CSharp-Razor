@@ -47,6 +47,45 @@ namespace EstoqueMVC.DAL
             return dt;
 
         }
+        public bool inserirUsuario(Usuario usuario)
+        {
+            SqlConnection conn = new SqlConnection(Conectar());
+            bool result = false;
+            int cadastrar;
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmdo = new SqlCommand("inserirUsuario", conn);
+                cmdo.CommandType = CommandType.StoredProcedure;
+                cmdo.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = usuario.Email;
+                cmdo.Parameters.Add("@Nome", SqlDbType.VarChar, 100).Value = usuario.Nome;
+                cmdo.Parameters.Add("@Senha", SqlDbType.VarChar, 50).Value = usuario.Senha;
+                cadastrar = cmdo.ExecuteNonQuery();
+
+                if (cadastrar >= 1)
+                {
+                    result = true;
+                }
+                if (cadastrar < 1)
+                {
+                    result = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return result;
+
+        }
+
 
     }
 }

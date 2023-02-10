@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+    var message = TempData["Message"]?.ToString();
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cadastro</title>
+    </head>
+    <body>
+        @if(!string.IsNullOrEmpty(message)){
+           <br />
+           <b>@message</b>
+           <br />
+           <br />
+        }
+        <form method="post">
+            <label>Email</label>
+            <input type="text" id="txEmail" name="txtEmail"/>
+            <br />
+            <label>Nome</label>
+            <input type="text" name="txtNome" id="txtNome">
+            <br />
+            <label>Senha</label>
+            <input type="text" id="txtSenha" name="txtSenha"/>
+            <br />
+            <button type="submit" formaction = "Inserir" id="btnCadastro" name="btnCadastro">Cadastrar</button>
+        </form>
+        <br />
+        <a asp-controller="Usuario" asp-action="Login">Login</a>
+    </body>
+</html>
