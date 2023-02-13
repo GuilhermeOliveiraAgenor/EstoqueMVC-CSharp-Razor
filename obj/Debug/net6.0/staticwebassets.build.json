@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pkTDCAP1JG4Ezb9cmRVy5++34i/eIhKRCt1FF81bL+Y=",
+  "Hash": "QrNtdFmrHHqDrOJOeG52NJKC5RHxTIJ6rEOHG2S5faA=",
   "Source": "EstoqueMVC",
   "BasePath": "_content/EstoqueMVC",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\EstoqueMVC.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\cadastro.css",
+      "SourceId": "EstoqueMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\",
+      "BasePath": "_content/EstoqueMVC",
+      "RelativePath": "css/cadastro.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\cadastro.css"
+    },
+    {
+      "Identity": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\login.css",
+      "SourceId": "EstoqueMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\",
+      "BasePath": "_content/EstoqueMVC",
+      "RelativePath": "css/login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
       "Identity": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\site.css",
@@ -1069,6 +1103,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\Resources\\fundo_login.jpg",
+      "SourceId": "EstoqueMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\",
+      "BasePath": "_content/EstoqueMVC",
+      "RelativePath": "Resources/fundo_login.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\fundo_login.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\Resources\\manutencao.jpg",
+      "SourceId": "EstoqueMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\",
+      "BasePath": "_content/EstoqueMVC",
+      "RelativePath": "Resources/manutencao.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\manutencao.jpg"
     }
   ]
 }

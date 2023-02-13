@@ -1,0 +1,87 @@
+﻿*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+.container {
+    width: 80%;
+    height: 80vh;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    box-shadow: 5px 5px 8px 8px orange; /*borda da tela*/
+    border-radius: 10px;
+}
+.form-image{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    padding: 1rem;
+}
+.form-image img{
+    width: 767px;
+    height: 775px;
+    background-size: cover;
+}
+.form{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 3rem;
+}
+.input-group{
+    display: flex;
+    flex-wrap wrap; /*coluca um text do lado do outro*/
+    justify-content: space-between; /*espaço entre text*/
+    padding: 0rem 4rem;
+}
+.input-box{
+    display: flex;
+    flex-direction: column; /*alinhamento da coluna*/
+    margin-bottom: 5rem;
+    padding: 0rem 4rem; /*espaço entre text*/
+}
+.input-box input{
+    margin: 1rem 0; /*margem do botao*/
+    padding: 1rem 1.2rem;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+    flex-direction: column;
+}
+.input-box input:hover{
+    background-color: whitesmoke;
+}
+.input-box input:focus-visible{ /*se clicar sobre o text*/
+    outline: 1px solid orange;
+}
+.input-box label{
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+}
+.continue-button button{
+    width: 720%;
+    margin-top: 2.6rem;
+    margin-left: 15px;
+    font-size: 18px;
+    border: none;
+    background-color: orange;
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.botao button:hover{
+     background-color:orange;
+     color: black;
+     border-color: black;
+     box-shadow: 3px 3px 3px 3px;
+}
+

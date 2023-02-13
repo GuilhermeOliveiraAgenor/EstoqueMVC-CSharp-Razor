@@ -8,26 +8,44 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width"/>
         <title>Login</title>
-    </head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="~/css/login.css" />
+   </head>
     <body>
-    @if(!String.IsNullOrEmpty(message))
-    {
-        <br />
-        <b>@message</b>
-        <br />
-        <br />
-    }
+    <div class="container">
+        <div class="card">
+            <h1>Login</h1>
     <form method="post">
-        <label>Email</label>
-        <input type="text" id="txtEmail" name="txtEmail"/>
-        <br />
-        <label>Senha</label>
-        <input type="text" id="txtSenha" name="txtSenha"/>
-        <br />
-        <button type="submit" formaction = "Logar" id="btnLogin" name="btnLogin">Logar</button>
-    </form>
-    <br />
-    <a asp-controller="Usuario" asp-action="Cadastro">Clique aqui para fazer seu cadastro</a>
+            @if (!String.IsNullOrEmpty(message))
+            {
+                <br />
+                <b>@message</b>
+                <br />
+                <br />
+             }    
+            <div class="text-float">
+                 <label>Email</label>
+                 <input type="text" id="txtEmail" name="txtEmail" />
+            </div>
+            <br />
+            <div class="text-float">
+                 <label>Senha</label>
+                 <input type="text" id="txtSenha" name="txtSenha" />
+            </div>           
+            <br />
+            <div class="botao">
+               <button type="submit" formaction="Logar" id="btnLogin" name="btnLogin">Logar</button>
+            </div>
+            <br />
+            <br />
+            <br />
+            <a asp-controller="Usuario" asp-action="Cadastro">Clique aqui para fazer seu cadastro</a>
+            </form>
+        </div>
+    </div>
     </body>
 </html>
