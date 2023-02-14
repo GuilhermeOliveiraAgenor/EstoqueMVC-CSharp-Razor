@@ -5,53 +5,52 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Cadastro</title>
+<head>
+    <title>Cadastro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="~/css/cadastro.css"/>
-    </head>
-    <body>
-        <div class="container">
-            <div class="form-image">
-                <img src="~/Resources/manutencao.jpg"/>
-            </div>
+    <link rel="stylesheet" type="text/css" href="~/css/cadastro.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="~/Resources/manutencao.jpg" />
+        </div>
         <div class="form">
-        <form method="post">
-            <div class="form-header">
-                <div class="titulo">
-                    <h1>Cadastrar</h1>
+            <form method="post">
+                <div class="form-header">
+                    <div class="titulo">
+                        <h1>Cadastrar</h1>
+                    </div>
                 </div>
-            </div>
-            <div class="input-group">
-                    @if (!string.IsNullOrEmpty(message))
-                    {
-                        <br />
-                        <b>@message</b>
-                        <br />
-                        <br />
-                    }
+                @if (!String.IsNullOrEmpty(message))
+                {
+                    <b>@message</b>
+                }
+                <div class="input-group">
                     <div class="input-box">
                         <label>Email</label>
-                        <input type="text" id="txEmail" name="txtEmail" />
+                        <input type="text" id="txtEmail" name="txtEmail" />
                     </div>
                     <div class="input-box">
                         <label>Nome</label>
-                        <input type="text" name="txtNome" id="txtNome">
+                        <input type="text" id="txtNome" name="txtNome" />
                     </div>
                     <div class="input-box">
                         <label>Senha</label>
-                        <input type="text" id="txtSenha" name="txtSenha" />
+                        <input type="password" id="txtSenha" name="txtSenha" />
+                    </div>
+                    <div class="input-box">
+                        <label>Confirmar Senha</label>
+                        <input type="password" id="txtConfirmarSenha" name="txtConfirmarSenha" />
                     </div>
                     <div class="continue-button">
-                        <button type="submit" formaction="Inserir" id="btnCadastro" name="btnCadastro">Cadastrar</button>
+                        <button type="submit" formaction="Inserir" id="btnSalvar" name="btnSalvar">Salvar</button>
                     </div>
-            </div>
-        </form>
-        <br />
-        <a asp-controller="Usuario" asp-action="Login">Login</a>
+                </div>
+            </form>
         </div>
     </div>
-    </body>
+</body>
 </html>
