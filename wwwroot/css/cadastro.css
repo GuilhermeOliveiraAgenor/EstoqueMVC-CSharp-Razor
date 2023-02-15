@@ -61,7 +61,23 @@ body{
     margin: 0 auto;
     position: absolute;
 }
-
+#txtCodigo{
+    border:none;
+    font-size: 18px;
+}
+.input-codigo input:focus{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+#lblCodigo
+{
+    font-size: 16px;
+}
+.input-codigo input{
+    padding-right: 1px;
+    border: none;
+}
 .input-group {
     display: flex;
     flex-wrap: wrap; /*coloca um text do lado do outro*/
@@ -100,7 +116,7 @@ body{
 }
 
 .continue-button button {
-    width: 340%;
+    width: 265%;
     margin-top: 2.6rem;
     margin-left: 83px;
     font-size: 18px;
@@ -110,10 +126,26 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
+.continue-button{
+    margin-right: 400px;
+}
 
 .botao button:hover {
     background-color: orange;
     color: black;
     border-color: black;
     box-shadow: 3px 3px 3px 3px;
+}
+
+.continue-button a {
+    width: 100%;
+    margin-left: 390px;
+    font-size: 18px;
+    border: none;
+    background-color: orange;
+    padding: 0.62rem;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

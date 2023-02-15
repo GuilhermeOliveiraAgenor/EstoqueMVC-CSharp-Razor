@@ -8,33 +8,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/cadastro.css"/>
     <title>Alterar Produto</title>
 </head>
 <body>
-    @if (!string.IsNullOrEmpty(message))
-    {
-        <br />
-        <b>@message</b>
-        <br />
-        <br />
-    }
-    <form method="post">
-        <label>Código</label>
-        <input type="text" id="txtCodigo" name="txtCodigo" value="@Model.idProduto" />
-        <br />
-        <label>Nome</label>
-        <input type="text" id="txtNome" name="txtNome" value="@Model.Nome" />
-        <br />
-        <label>Preço</label>
-        <input type="text" id="txtPreco" name="txtPreco" value="@Model.Preco" />
-        <br />
-        <label>Quantidade</label>
-        <input type="text" id="txtQuantidade" name="txtQuantidade" value="@Model.Quantidade" />
-        <br />
-        <label>Observacoes</label>
-        <input type="text" id="txtObservacoes" name="txtObservacoes" value="@Model.Observacoes" />
-        <br />
-        <button type="submit" formaction="Alterar" id="btnAlterar" name="btnAlterar">Alterar</button>
-    </form>
+    <div class="container">
+        <div class="form-image">
+            <img  src="~/Resources/manutencao.jpg"/>
+        </div>
+        <div class="form">
+            <form method="post">
+                <div class="form-header">
+                    <div class="titulo">
+                        <h1>Alterar</h1>
+                    </div>
+                </div>
+                <div class="input-codigo">
+                    <label>Código:</label>
+                    <input type="text" id="txtCodigo" name="txtCodigo" value="@Model.idProduto" readonly/>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label>Nome</label>
+                        <input type="text" id="txtNome" name="txtNome" value="@Model.Nome" />
+                    </div>
+                    <div class="input-box">
+                        <label>Preço</label>
+                        <input type="text" id="txtPreco" name="txtPreco" value="@Model.Preco" />
+                    </div>
+                    <div class="input-box">
+                        <label>Quantidade</label>
+                        <input type="text" id="txtQuantidade" name="txtQuantidade" value="@Model.Quantidade" />
+                    </div>
+                    <div class="input-box">
+                        <label>Observacoes</label>
+                        <input type="text" id="txtObservacoes" name="txtObservacoes" value="@Model.Observacoes" />
+                    </div>
+                    <div class="continue-button">
+                        <button type="submit" formaction="Alterar" id="btnAlterar" name="btnAlterar">Alterar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

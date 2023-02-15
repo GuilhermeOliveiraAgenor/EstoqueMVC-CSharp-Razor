@@ -246,3 +246,8 @@ C:\Users\Guilherme\source\repos\EstoqueMVC\bin\Debug\net6.0\runtimes\unix\lib\ne
 C:\Users\Guilherme\source\repos\EstoqueMVC\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Guilherme\source\repos\EstoqueMVC\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Guilherme\source\repos\EstoqueMVC\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\staticwebassets\msbuild.EstoqueMVC.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\staticwebassets\msbuild.build.EstoqueMVC.props
+C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.EstoqueMVC.props
+C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.EstoqueMVC.props
+C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\staticwebassets.pack.json

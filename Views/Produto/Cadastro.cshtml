@@ -6,31 +6,54 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cadastro de Produtos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/cadastro.css"/>
+    <title>Cadastro de Produtos</title>
     </head>
     <body>
-        @if(!string.IsNullOrEmpty(message)){
-            <br />
-            <b>@message</b>
-            <br />
-            <br />
-        }
-        <form method="post">
-                <label>Nome</label>
-                <input type="text" id="txtNome" name="txtNome"/>
-                <br />
-                <label>Preço</label>
-                <input type="text" id="txtPreco" name="txtPreco"/>
-                <br />
-                <label>Quantidade</label>
-                <input type="text" id="txtQuantidade" name="txtQuantidade"/>
-                <br />
-                <label>Observacoes</label>
-                <input type="text" id="txtObservacoes" name="txtObservacoes"/>
-                <br />
-                <button type="submit" formaction = "Inserir" id="btnSalvar" name="btnSalvar">Salvar</button>
-        </form>
-        <a asp-controller="Produto" asp-action="Index">Lista</a>
+    <div class="container">
+        <div class="form-image">
+            <img src="~/Resources/manutencao.jpg" />
+        </div>
+        <div class="form">
+            <form method="post">
+                <div class="form-header">
+                    <div class="titulo">
+                        <h1>Cadastrar</h1>
+                    </div>
+                </div>
+                @if (!string.IsNullOrEmpty(message))
+                {
+                <b>@message</b>
+                }
+                <div class="input-group">
+                    <div class="input-box">
+                        <label>Nome</label>
+                        <input type="text" id="txtNome" name="txtNome" />
+                    </div>
+                    <div class="input-box">
+                        <label>Preço</label>
+                        <input type="text" id="txtPreco" name="txtPreco" />
+                    </div>
+                    <div class="input-box">
+                        <label>Quantidade</label>
+                        <input type="text" id="txtQuantidade" name="txtQuantidade" />
+                    </div>
+                    <div class="input-box">
+                        <label>Observacoes</label>
+                        <input type="text" id="txtObservacoes" name="txtObservacoes" />
+                    </div>
+                    <div class="continue-button">
+                        <button type="submit" formaction="Inserir" id="btnInserir" name="btnInserir">Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+            <div class="continue-button">
+                <a href="/Produto/Index">Lista</a>
+            </div>
+        </div>
+    </div>
     </body>
-
 </html>
