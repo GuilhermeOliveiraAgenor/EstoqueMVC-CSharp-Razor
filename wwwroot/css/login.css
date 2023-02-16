@@ -68,15 +68,22 @@ button{
     justify-content: center;
 }
 
-a{
+a {
     color: orange;
     font-weight: bold; /*defini tipo do texto*/
     text-decoration: none; /*tira a marcacao da linha*/
     font-size: 18px;
+    transition: all .4s ease-out;
 }
 
 a:hover{
     color: orangered;
 }
 
+.botao button:hover {
+    background-color: orange;
+    color: black;
+    border-color: black;
+    box-shadow: 3px 3px 3px 3px;
+}
 

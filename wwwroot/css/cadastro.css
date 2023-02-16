@@ -116,9 +116,9 @@ body{
 }
 
 .continue-button button {
-    width: 265%;
+    width: 290%;
     margin-top: 2.6rem;
-    margin-left: 83px;
+    margin-left: 93px;
     font-size: 18px;
     border: none;
     background-color: orange;
@@ -126,20 +126,29 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
-.continue-button{
-    margin-right: 400px;
-}
-
-.botao button:hover {
+.continue-button button:hover, .continue-button a:hover, .botao button:hover {
     background-color: orange;
     color: black;
     border-color: black;
     box-shadow: 3px 3px 3px 3px;
+    transition: all .4s ease-out;
+
 }
 
 .continue-button a {
     width: 100%;
-    margin-left: 390px;
+    font-size: 18px;
+    border: none;
+    background-color: orange;
+    padding: 0.70rem 2rem;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.botao button {
+    width: 640%;
     font-size: 18px;
     border: none;
     background-color: orange;
