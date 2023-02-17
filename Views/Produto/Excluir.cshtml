@@ -7,26 +7,52 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Excluir Produto</title>
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/excluir.css"/>
+    <title>Excluir Produto</title>
     </head>
     <body>
+    <div class="container">
         <form method="post">
-            <label>Código</label>
-            <input type="text" id="txtCodigo" name="txtCodigo" value="@Model.idProduto" />
-            <br />
-            <label>Nome</label>
-            <input type="text" id="txtNome" name="txtNome" value="@Model.Nome"/>
-            <br />
-            <label>Preco</label>
-            <input type="text" id="txtPreco" name="txtPreco" value="@Model.Preco"/>
-            <br />
-            <label>Quantidade</label>
-            <input type="text" id="txtQuantidade" name="txtQuantidade" value="@Model.Quantidade"/>
-            <br />
-            <label>Observacoes</label>
-            <input type="text" id="txtObservacoes" name="txtObservacoes" value="@Model.Observacoes"/>
-            <br />
-            <button type="submit" id="btnExcluir" name="btnExcluir" formaction="Excluir">Excluir</button>
+          <div class="label-box">
+               <div class="botao">
+                    <button type="submit" formaction="Excluir" id="btnExcluir" name="btnExcluir">Excluir</button>
+               </div>
+              <strong>Código</strong>
+              <br />
+              <br />
+              <input type="text" id="txtCodigo" name="txtCodigo" value="@Model.idProduto" readonly />
+            </div>
+          <div class="label-box">
+              <strong>Nome</strong>
+              <br />
+              <br />
+              <input type="text" id="txtNome" name="txtNome" value="@Model.Nome" readonly />
+            </div>
+          <div class="label-box">
+              <strong>Preco</strong>
+              <br />
+              <br />
+              <input type="text" id="txtPreco" name="txtPreco" value="@Model.Preco" readonly />
+            </div>
+          <div class="label-box">
+              <strong>Quantidade</strong>
+               <br />
+               <br />
+                <input type="text" id="txtQuantidade" name="txtQuantidade" value="@Model.Quantidade" readonly />
+          </div>
+          <div class="label-box">
+               <strong>Observacoes</strong>
+               <br />
+               <br />
+               <input type="text" id="txtObservacoes" name="txtObservacoes" value="@Model.Observacoes" readonly/>
+          </div>
+          <br />
         </form>
+    </div>
+    <br />
     </body>
 </html>

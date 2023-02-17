@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\cadastro.css"
     },
     {
+      "Id": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\excluir.css",
+      "PackagePath": "staticwebassets\\css\\excluir.css"
+    },
+    {
       "Id": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },

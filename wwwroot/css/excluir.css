@@ -1,0 +1,62 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Work Sans', sans-serif;
+}
+body {
+    background-image: url('../Resources/fundo_login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container{
+    display: flex; /*fixar na linha*/
+    justify-content: center;
+    align-items: center;
+}
+strong{
+    margin-left: 95px;
+}
+.label-box{
+    margin-top: 2px;
+    padding: 2rem 4rem; /*espaço entre text*/
+    box-shadow: 5px 5px 5px 5px orange;
+    background-color: white;
+}
+.label-box strong{
+    padding: 4px;
+    box-shadow: 2px 2px 2px 2px orange;
+    border-radius: 4px;
+}
+.label-box input{
+    margin: 1rem 0; /*margem do botao*/
+    padding: 1rem 2rem;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+.label-box input:hover{
+    background-color: whitesmoke;
+}
+.botao button{
+    width: 90%;
+    color: orange;
+    margin-left: 15px;
+    font-size: 18px;
+    border: none;
+    background-color: black;
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .4s ease-out;
+}
+#btnExcluir{
+    margin-bottom: 40px;
+}
+.botao button:hover{
+    background-color: orange;
+    color: black;
+    border-color: black;
+    box-shadow: 3px 3px 3px 3px;
+}

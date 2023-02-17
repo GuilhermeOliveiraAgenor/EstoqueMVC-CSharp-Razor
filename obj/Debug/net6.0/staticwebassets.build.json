@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QrNtdFmrHHqDrOJOeG52NJKC5RHxTIJ6rEOHG2S5faA=",
+  "Hash": "T0yS1GColWljBY+Kg/959324870VB6dvCN34qGt/RaI=",
   "Source": "EstoqueMVC",
   "BasePath": "_content/EstoqueMVC",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\cadastro.css"
+    },
+    {
+      "Identity": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\excluir.css",
+      "SourceId": "EstoqueMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\",
+      "BasePath": "_content/EstoqueMVC",
+      "RelativePath": "css/excluir.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\excluir.css"
     },
     {
       "Identity": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\login.css",
