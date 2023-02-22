@@ -8,31 +8,78 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Lista de produto</title>
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/lista.css"/>
+    <title>Lista de produto</title>
     </head>
     <body>
-        @if (!string.IsNullOrEmpty(message))
-        {
-            <br />
-            <b>@message</b>
-            <br />
-            <br />
-        }
+    <header>
+        <nav>
+            <a class="logo" href="/Produto/Index">Controle de Estoque</a>
+            <div class="mobile-menu">
+                <div class="linha1"></div>
+                <div class="linha2"></div>
+                <div class="linha3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/Home/Privacy">Sobre</a></li>
+                <li><a href="/Produto/Index">Produtos</a></li>
+                <li><a href="/Usuario/Login">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <img src="~/Resources/listadeproduto.jpg"/>
+        <br />
+        <br />
+        <br />
+        <div class="titulo">
+            <h1>CONTROLE DE ESTOQUE</h1>
+            <h2>Lista de produtos</h2>
+            @if (!string.IsNullOrEmpty(message))
+            {
+                <div class="mensagem">
+                    <b>@message</b>
+                    <br />
+                    <br />
+                </div>
+            }
+        </div>
         <form method="get">
-            <input type="text" id="txtPesquisa" name="txtPesquisa"/>
-            <br />
-            <text>Codigo<text/>
-            <input type="radio" id="btnRadio" name="btnRadio" value="codigo"/>
-            <br />
-            <text>Nome</text>
-            <input type="radio" id="btnRadio" name="btnRadio" value="nome"/>
-            <br />
-            <text>Preço</text>
-            <input type="radio" id="btnRadio" name="btnRadio" value="preco"/>
-            <br />
-            <button type="submit" value="Pesquisar" formaction="/Produto/Pesquisa" >Pesquisar</button>
+            <table class="pesquisa">
+                <tr>
+                    <td>
+                        <br />
+                        <br />
+                        <span><b>Pesquisar por:</b></span>
+                        <br />
+                        <input type="radio" id="btnRadio" name="btnRadio" value="codigo" />
+                        <text>Codigo</text>
+                        <input type="radio" id="btnRadio" name="btnRadio" value="nome" />
+                        <text>Nome</text>
+                        <input type="radio" id="btnRadio" name="btnRadio" value="preco" />
+                        <text>Preço</text>
+                        <div class="text-pesquisa">
+                                <input type="text" id="txtPesquisa" name="txtPesquisa" placeholder="Digite o Id, Nome ou Preço"/>
+                                <button type="submit" value="Pesquisar" formaction="/Produto/Pesquisa">Pesquisar</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </form>
-       <table>
+        <div class="botao">
+            <a href="/Produto/Cadastro">Cadastrar produtos</a>
+            <a href="/Home/Index">Tela Principal</a>
+            <a href="/Produto/Index">Ver lista completa</a>
+        </div>
+        <br />
+        <br />
+        <br />
+       <table class="content-table">
             <thead>
                 <tr>
                     <th>Id Produto</th>
@@ -45,7 +92,7 @@
             <tbody>
                 @foreach(var produto in Model)
                 {
-                    <tr>
+                    <tr class="active-row">
                         <td>
                             @produto.idProduto
                         </td>
@@ -71,7 +118,6 @@
                 }
             </tbody>
        </table>
-       <a asp-controller="Produto" asp-action="Cadastro">Cadastro</a>
+    </div>
     </body>
-
 </html>

@@ -9,8 +9,16 @@
       "PackagePath": "staticwebassets\\Resources\\fundo_login.jpg"
     },
     {
+      "Id": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\Resources\\listadeproduto.jpg",
+      "PackagePath": "staticwebassets\\Resources\\listadeproduto.jpg"
+    },
+    {
       "Id": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\Resources\\manutencao.jpg",
       "PackagePath": "staticwebassets\\Resources\\manutencao.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\Privacy.css",
+      "PackagePath": "staticwebassets\\css\\Privacy.css"
     },
     {
       "Id": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\cadastro.css",
@@ -21,8 +29,16 @@
       "PackagePath": "staticwebassets\\css\\excluir.css"
     },
     {
+      "Id": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\lista.css",
+      "PackagePath": "staticwebassets\\css\\lista.css"
+    },
+    {
       "Id": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\menu.css",
+      "PackagePath": "staticwebassets\\css\\menu.css"
     },
     {
       "Id": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\site.css",

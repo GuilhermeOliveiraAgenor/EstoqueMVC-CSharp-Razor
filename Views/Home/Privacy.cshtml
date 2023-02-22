@@ -1,6 +1,42 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    Layout = null;
 }
-<h1>@ViewData["Title"]</h1>
-
-<p>Use this page to detail your site's privacy policy.</p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/cadastro.css" />
+    <link rel="stylesheet" href="~/css/Menu.css" />
+    <link rel="stylesheet" href="~/css/Privacy.css" />
+    <title>Sobre</title>
+</head>
+<body>
+ <header>
+        <nav>
+            <a class="logo" href="/Produto/Menu">Controle de Estoque</a>
+            <div class="mobile-menu">
+                <div class="linha1"></div>
+                <div class="linha2"></div>
+                <div class="linha3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/Home/About">Sobre</a></li>
+                <li><a href="/Home/Contact">Contato</a></li>
+                <li><a href="/Produto/Lista">Produtos</a></li>
+                <li><a href="/Usuario/Logout">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="div-container">
+        <br />
+        <br />
+        <br />
+        <h3>
+            Todo estabelecimento precisa controlar seu estoque para poder organizar e planejar ações futuras da loja.
+            <br />Por isso, esse site é para você. Um sistema básico, útil para controlar seu estoque
+        </h3>
+    </div>
+</body>
+</html>

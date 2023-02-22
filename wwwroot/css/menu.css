@@ -1,0 +1,55 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+}
+body {
+    background-image: url('../Resources/fundo_login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+header a{
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+header a:hover{
+    opacity: 0.7;
+}
+.logo{
+    font-size: 24px;
+    letter-spacing: 4px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: orange;
+    height: 8vh;
+}
+.nav-list{
+    list-style: none;
+    display: flex;
+}
+.nav-list li{
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+.mobile-menu{
+    display: none;
+    cursor: pointer;
+}
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: white;
+    margin: 8px;
+}
+.img menu{
+    display: block;
+    margin: 0px auto;
+    margin-top: 50px;
+    border-radius: 40px 40px 40px;
+}
+
