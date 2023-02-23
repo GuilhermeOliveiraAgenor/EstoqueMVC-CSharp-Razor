@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "D2QFNiEuAqAnX3Lb/GIXoujp6TJAdjwSy85YdT0XVMs=",
+  "Hash": "eIpIUmbFIuR8k/B9uyy6DPr01Qzsf19EVmdM6Arvl3o=",
   "Source": "EstoqueMVC",
   "BasePath": "_content/EstoqueMVC",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\obj\\Debug\\net6.0\\scopedcss\\bundle\\EstoqueMVC.styles.css",
-      "SourceId": "EstoqueMVC",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/EstoqueMVC",
-      "RelativePath": "EstoqueMVC.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\obj\\Debug\\net6.0\\scopedcss\\bundle\\EstoqueMVC.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\EstoqueMVC.bundle.scp.css",
-      "SourceId": "EstoqueMVC",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/EstoqueMVC",
-      "RelativePath": "EstoqueMVC.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\EstoqueMVC.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\css\\cadastro.css",
       "SourceId": "EstoqueMVC",

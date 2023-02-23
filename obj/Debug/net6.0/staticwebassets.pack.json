@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\EstoqueMVC.bundle.scp.css",
-      "PackagePath": "staticwebassets\\EstoqueMVC.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\Guilherme\\source\\repos\\EstoqueMVC\\wwwroot\\Resources\\fundo_login.jpg",
       "PackagePath": "staticwebassets\\Resources\\fundo_login.jpg"
     },

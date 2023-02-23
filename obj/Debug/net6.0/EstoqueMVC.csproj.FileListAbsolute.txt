@@ -22,9 +22,7 @@ C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\EstoqueMVC.RazorAsse
 C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\EstoqueMVC.RazorAssemblyInfo.cs
 C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\scopedcss\bundle\EstoqueMVC.styles.css
-C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\scopedcss\projectbundle\EstoqueMVC.bundle.scp.css
 C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\EstoqueMVC.csproj.CopyComplete
 C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\EstoqueMVC.dll
 C:\Users\Guilherme\source\repos\EstoqueMVC\obj\Debug\net6.0\refint\EstoqueMVC.dll

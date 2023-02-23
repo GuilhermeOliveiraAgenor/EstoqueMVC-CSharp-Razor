@@ -46,8 +46,8 @@
 }
 .mensagem{
     position: absolute;
-    margin-left: 820px;
-    margin-top: 55px;
+    margin-left: 850px;
+    margin-top: 35px;
     text-align: center;
 }
 form{
@@ -71,8 +71,7 @@ span{
     margin-top: 10px;
 }
 a{
-    color: black;
-    box-shadow: black;
+    color: orange;
 }
 .container img{
     display: block;
