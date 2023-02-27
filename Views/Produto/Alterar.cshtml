@@ -50,19 +50,19 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label>Nome</label>
-                        <input type="text" id="txtNome" name="txtNome" value="@Model.Nome" />
+                        <input type="text" id="txtNome" name="txtNome" value="@Model.Nome" maxlength="50" title="Digite o nome" required autofocus />
                     </div>
                     <div class="input-box">
                         <label>Preço</label>
-                        <input type="text" id="txtPreco" name="txtPreco" value="@Model.Preco" />
+                        <input type="text" id="txtPreco" name="txtPreco" value="@Model.Preco" maxlength="8" title="Digite o preço com ponto, exemplo 5.0" />
                     </div>
                     <div class="input-box">
                         <label>Quantidade</label>
-                        <input type="text" id="txtQuantidade" name="txtQuantidade" value="@Model.Quantidade" />
+                        <input type="text" id="txtQuantidade" name="txtQuantidade" value="@Model.Quantidade" maxlength="7" title="Digite a quantidade" required />
                     </div>
                     <div class="input-box">
                         <label>Observacoes</label>
-                        <input type="text" id="txtObservacoes" name="txtObservacoes" value="@Model.Observacoes" />
+                        <input type="text" id="txtObservacoes" name="txtObservacoes" value="@Model.Observacoes" maxlength="100" title="Digite as observacoes" required />
                     </div>
                     <div class="continue-button">
                         <button type="submit" formaction="Alterar" id="btnAlterar" name="btnAlterar">Alterar</button>

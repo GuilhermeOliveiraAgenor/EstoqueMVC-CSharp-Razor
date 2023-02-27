@@ -1,22 +1,18 @@
-﻿body {
-    background-image: url('../Resources/fundo_login.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 90vw;
-    height: 90vh;
-}
-
-*{ /*Margem da página 0*/
+﻿* { /*Margem da página 0*/
     margin: 0;
     padding: 0;
     font-family: 'Work Sans', sans-serif;
 }
-
+body {
+    background-image: url('../Resources/fundo_login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .container{
     display:flex;
     justify-content: center; /*centraliza o form*/
     width: 100%;
-    margin-top: 100px /*espaço na tela*/
+    margin-top: 100px; /*espaço na tela*/
 }
 .card{
     background-color: white;
@@ -27,7 +23,7 @@
 }
 h1{
     text-align: center;
-    margin-bottom: 70px;/*altura do título*/;
+    margin-bottom: 70px;/*altura do título*/
     color: orange;
     font-weight: bold;
     font-size: 50px;
