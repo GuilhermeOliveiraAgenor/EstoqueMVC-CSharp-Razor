@@ -11,6 +11,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/css/cadastro.css" />
+    <script>
+        function verificarSenha(){
+            const txtSenha = document.querySelector('input[name=txtSenha]')
+            const txtConfirmarSenha = document.querySelector('input[name=txtConfirmarSenha]')
+            const btnSalvar = document.getElementById("btnSalvar")
+
+
+            if(txtSenha.value != txtConfirmarSenha.value){
+                btnSalvar.disabled = true;
+            }
+            if(txtSenha.value == txtConfirmarSenha.value){
+                btnSalvar.disabled = false;
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -39,14 +54,14 @@
                     </div>
                     <div class="input-box">
                         <label>Senha</label>
-                        <input type="password" id="txtSenha" name="txtSenha" maxlength="50" title="Digite a senha" required />
+                        <input type="password" id="txtSenha" name="txtSenha" maxlength="50" onchange="verificarSenha()" title="Digite a senha" required />
                     </div>
                     <div class="input-box">
                         <label>Confirmar Senha</label>
-                        <input type="password" id="txtConfirmarSenha" name="txtConfirmarSenha" maxlength="50" title="Digite a senha novamnete" required />
+                        <input type="password" id="txtConfirmarSenha" name="txtConfirmarSenha" maxlength="50" onchange="verificarSenha()" title="Digite a senha novamente" required />
                     </div>
                     <div class="continue-button">
-                        <button type="submit" formaction="Inserir" id="btnSalvar" name="btnSalvar">Salvar</button>
+                        <button type="submit" formaction="Inserir" id="btnSalvar" onclick="verificarSenha()" name="btnSalvar">Salvar</button>
                     </div>
                 </div>
             </form>
