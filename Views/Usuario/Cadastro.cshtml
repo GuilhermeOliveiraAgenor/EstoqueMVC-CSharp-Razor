@@ -54,11 +54,11 @@
                     </div>
                     <div class="input-box">
                         <label>Senha</label>
-                        <input type="password" id="txtSenha" name="txtSenha" maxlength="50" onchange="verificarSenha()" title="Digite a senha" required />
+                        <input type="password" id="txtSenha" name="txtSenha" maxlength="50" onkeyup="verificarSenha()" title="Digite a senha" required />
                     </div>
                     <div class="input-box">
                         <label>Confirmar Senha</label>
-                        <input type="password" id="txtConfirmarSenha" name="txtConfirmarSenha" maxlength="50" onchange="verificarSenha()" title="Digite a senha novamente" required />
+                        <input type="password" id="txtConfirmarSenha" name="txtConfirmarSenha" maxlength="50" onkeyup="verificarSenha()" title="Digite a senha novamente" required />
                     </div>
                     <div class="continue-button">
                         <button type="submit" formaction="Inserir" id="btnSalvar" onclick="verificarSenha()" name="btnSalvar">Salvar</button>
