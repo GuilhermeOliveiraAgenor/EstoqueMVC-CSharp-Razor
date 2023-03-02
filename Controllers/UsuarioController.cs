@@ -34,6 +34,7 @@ namespace EstoqueMVC.Controllers
             if (dt.Rows.Count == 1)
             {
                 HttpContext.Session.SetString("Sessao","Ok");
+                loginUsuario.Login(usuario.Email, usuario.Senha);//faz a autenticação da classe
                 return RedirectToAction("Index","Produto");
             }
             else
@@ -77,7 +78,29 @@ namespace EstoqueMVC.Controllers
 
             return RedirectToAction("Cadastro","Usuario");
         }
+        public IActionResult AlterarSenha()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public IActionResult AlterarSenha(string txtSenha)
+        {
+            string email = loginUsuario.getEmail();
+            int idUsuario;
+            DataTable dt = usuarioDAL.selecionarUsuario(email);
+
+            if(dt.Rows.Count == 1)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    idUsuario = Convert.ToInt32(row["idUsuario"].ToString());
+                    usuario.Senha = txtSenha;
+                    usuario.idUsuario = idUsuario;
+                }
+            }
+
+        }
 
     }
 }

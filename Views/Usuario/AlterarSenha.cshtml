@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+    var message = TempData["Message"]?.ToString();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/cadastro.css" />
+    <link rel="stylesheet" type="text/css" href="/css/menu.css"/>
+    <script>
+        function verificarSenha() {
+            const txtSenha = document.querySelector('input[name=txtSenha]')
+            const txtConfirmarSenha = document.querySelector('input[name=txtConfirmarSenha]')
+            const btnSalvar = document.getElementById("btnSalvar")
+
+
+            if (txtSenha.value != txtConfirmarSenha.value) {
+                btnSalvar.disabled = true;
+            }
+            if (txtSenha.value == txtConfirmarSenha.value) {
+                btnSalvar.disabled = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="/Produto/Index">Controle de Estoque</a>
+            <div class="mobile-menu">
+                <div class="linha1"></div>
+                <div class="linha2"></div>
+                <div class="linha3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/Home/Privacy">Sobre</a></li>
+                <li><a href="/Produto/Index">Produtos</a></li>
+                <li><a href="/Usuario/Login">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="form-image">
+            <img src="~/Resources/manutencao.jpg" />
+        </div>
+        <div class="form">
+            <form method="post">
+                <div class="form-header">
+                    <div class="titulo">
+                        <h1>Alterar Senha</h1>
+                    </div>
+                </div>
+                @if (!String.IsNullOrEmpty(message))
+                {
+                    <b>@message</b>
+                }
+                <div class="input-group">
+                    <div class="input-box">
+                        <label>Senha</label>
+                        <input type="password" id="txtSenha" name="txtSenha" maxlength="50" onkeyup="verificarSenha()" title="Digite a senha" required />
+                    </div>
+                    <div class="input-box">
+                        <label>Confirmar Senha</label>
+                        <input type="password" id="txtConfirmarSenha" name="txtConfirmarSenha" maxlength="50" onkeyup="verificarSenha()" title="Digite a senha novamente" required />
+                    </div>
+                    <div class="continue-button">
+                        <button type="submit" formaction="AlterarSenha" id="btnSalvar" name="btnSalvar">Salvar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
