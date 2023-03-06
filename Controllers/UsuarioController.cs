@@ -88,6 +88,7 @@ namespace EstoqueMVC.Controllers
         {
             string email = loginUsuario.getEmail();
             int idUsuario;
+            bool result = false;
             DataTable dt = usuarioDAL.selecionarUsuario(email);
 
             if(dt.Rows.Count == 1)
@@ -98,7 +99,21 @@ namespace EstoqueMVC.Controllers
                     usuario.Senha = txtSenha;
                     usuario.idUsuario = idUsuario;
                 }
+
+                result = usuarioDAL.alterarSenha(usuario);
+
+                if(result == true)
+                {
+                    TempData["Message"] = "Senha alterada com sucesso";
+                }
+                else
+                {
+                    TempData["Message"] = "Erro ao alterar senha";
+                }
+
             }
+
+            return RedirectToAction("AlterarSenha", "Usuario");
 
         }
 

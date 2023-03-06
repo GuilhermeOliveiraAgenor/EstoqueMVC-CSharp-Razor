@@ -27,7 +27,7 @@ namespace EstoqueMVC.DAL
                 cmdo.Connection = conn;
                 cmdo.CommandType = CommandType.Text;
                 cmdo.CommandText = "select *from Usuario where Email = @Email";
-                cmdo.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = usuario.Email;
+                cmdo.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = email;
                 SqlDataReader dr = cmdo.ExecuteReader();
                 dt.Load(dr);
 
