@@ -9,11 +9,9 @@ namespace EstoqueMVC.Models
     public static class loginUsuario
     {
         static string emailUsuario;
-        static string senhaUsuario;
-        public static void Login(string email, string senha)
+        public static void Login(string email)
         {
             emailUsuario = email;
-            senhaUsuario = senha;
         }
 
         public static string getEmail()

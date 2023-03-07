@@ -9,6 +9,7 @@ namespace EstoqueMVC.Controllers
     {
         Usuario usuario = new Usuario();
         UsuarioDAL usuarioDAL = new UsuarioDAL();
+        string confirmar;
 
         private readonly IHttpContextAccessor session;
         public UsuarioController(IHttpContextAccessor login)
@@ -34,7 +35,7 @@ namespace EstoqueMVC.Controllers
             if (dt.Rows.Count == 1)
             {
                 HttpContext.Session.SetString("Sessao","Ok");
-                loginUsuario.Login(usuario.Email, usuario.Senha);//faz a autenticação da classe
+                loginUsuario.Login(usuario.Email);//faz a autenticação da classe
                 return RedirectToAction("Index","Produto");
             }
             else
@@ -114,6 +115,35 @@ namespace EstoqueMVC.Controllers
             }
 
             return RedirectToAction("AlterarSenha", "Usuario");
+
+        }
+        public IActionResult ConfirmarSenha()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ConfirmarSenha(string txtSenha)
+        {
+            string email = loginUsuario.getEmail();
+            int idUsuario;
+            DataTable dt = new DataTable();
+
+            dt = usuarioDAL.selecionarUsuario(email);
+
+            if(dt.Rows.Count == 1)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    confirmar = row["Senha"].ToString();
+                }
+                if (txtSenha == confirmar)
+                {
+                    return RedirectToAction("AlterarSenha", "Usuario");
+                }
+            }
+
+            return View();
 
         }
 

@@ -1,0 +1,45 @@
+﻿@{
+
+    Layout = null;
+    var message = TempData["Message"]?.ToString();
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Confirmar Senha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/login.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Confirme sua senha</h1>
+            <form method="post">
+                @if (!String.IsNullOrEmpty(message))
+                {
+                    <br />
+                    <b>@message</b>
+                    <br />
+                    <br />
+                }
+                <div class="text-float">
+                    <label>Digite a senha</label>
+                    <input type="password" id="txtSenha" name="txtSenha" maxlength="50" title="Digite a senha" required autofocus />
+                </div>
+                <br />
+                <div class="botao">
+                    <button type="submit" formaction="ConfirmarSenha" id="btnConfirmar" name="btnConfirmar">Confirmar</button>
+                </div>
+                <br />
+                <br />
+                <br />
+            </form>
+        </div>
+    </div>
+</body>
+</html>
