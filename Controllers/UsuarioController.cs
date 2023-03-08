@@ -141,6 +141,10 @@ namespace EstoqueMVC.Controllers
                 {
                     return RedirectToAction("AlterarSenha", "Usuario");
                 }
+                else
+                {
+                    TempData["Message"] = "Senha inválida. Tente novamente";
+                }
             }
 
             return View();
