@@ -1,10 +1,11 @@
-﻿using EstoqueMVC.Models;
+﻿using EstoqueMVC.Interface;
+using EstoqueMVC.Models;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace EstoqueMVC.DAL
 {
-    public class UsuarioDAL
+    public class UsuarioDAL : IUsuarioDAL
     {
         public static IConfiguration Configuration { get; set; }
         private string Conectar()
@@ -121,7 +122,7 @@ namespace EstoqueMVC.DAL
             try
             {
                 conn.Open();
-                SqlCommand cmdo = new SqlCommand("alterarSenha",conn);
+                SqlCommand cmdo = new SqlCommand("alterarSenha", conn);
                 cmdo.CommandType = CommandType.StoredProcedure;
                 cmdo.Parameters.Add("@idUsuario", SqlDbType.Int).Value = usuario.idUsuario;
                 cmdo.Parameters.Add("@Senha", SqlDbType.VarChar, 50).Value = usuario.Senha;
@@ -131,7 +132,7 @@ namespace EstoqueMVC.DAL
                 {
                     result = true;
                 }
-                if(alterar < 1)
+                if (alterar < 1)
                 {
                     result = false;
                 }
@@ -146,9 +147,6 @@ namespace EstoqueMVC.DAL
             }
 
             return result;
-
         }
-
-
     }
 }

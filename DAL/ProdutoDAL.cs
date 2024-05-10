@@ -2,13 +2,13 @@
 using System.Data;
 using EstoqueMVC.Models;
 using Microsoft.CodeAnalysis.Emit;
+using EstoqueMVC.Interface;
 
 namespace EstoqueMVC.DAL
 {
-    public class ProdutoDAL
+    public class ProdutoDAL : IProdutoDAL
     {
-       public static IConfiguration Configuration { get; set; }
-
+        public static IConfiguration Configuration { get; set; }
        private string conectar()
        {
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");//arquivo da string de conexao
@@ -258,8 +258,8 @@ namespace EstoqueMVC.DAL
 
         }
 
-       public bool excluirProduto(int id)
-       {
+        public bool excluirProduto(int id)
+        {
             SqlConnection conn = new SqlConnection(conectar());
             bool result = false;
             int excluir;
@@ -294,7 +294,6 @@ namespace EstoqueMVC.DAL
 
             return result;
 
-       }
-
+        }
     }
 }

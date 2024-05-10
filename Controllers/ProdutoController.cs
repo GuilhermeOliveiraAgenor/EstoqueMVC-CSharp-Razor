@@ -13,68 +13,60 @@ namespace EstoqueMVC.Controllers
         
         public IActionResult Index()
         {
+
             List<Produto> produtos = new List<Produto>();
 
-            if (HttpContext.Session.GetString("Sessao") != null)
+            if (HttpContext.Session.GetString("Sessao")  != null)
             {
                 produtos = produtoDAL.listarProduto();
                 return View(produtos);
             }
-            else
-            {
-                return RedirectToAction("Login","Usuario");
-            }
+            
+            return RedirectToAction("Login","Usuario");
+            
+
         }
         public IActionResult Pesquisa(string txtPesquisa,string btnRadio)
         {
             List<Produto> produtos = new List<Produto>();
-            
-            if (HttpContext.Session.GetString("Sessao") != null)
+
+            if(HttpContext.Session.GetString("Sessao") != null)
             {
-                if (btnRadio == "codigo")
+                if(btnRadio == "codigo")
                 {
                     produtos = produtoDAL.pesqProdutoCodigo(Convert.ToInt32(txtPesquisa));
-
-                    if (produtos.Count < 1)
-                    {
-                        TempData["Message"] = "Erro ao encontrar produto";
-                    }
                 }
                 if (btnRadio == "nome")
                 {
                     produtos = produtoDAL.pesqProdutoNome(txtPesquisa);
-
-                    if (produtos.Count < 1)
-                    {
-                        TempData["Message"] = "Erro ao encontrar produto";
-                    }
                 }
                 if (btnRadio == "preco")
                 {
                     produtos = produtoDAL.pesqProdutoPreco(Convert.ToDecimal(txtPesquisa));
 
-                    if (produtos.Count < 1)
-                    {
-                        TempData["Message"] = "Erro ao encontrar produto";
-                    }
                 }
-                return View("Index", produtos);
+                if (produtos.Count < 1)
+                {
+                    TempData["Message"] = "Erro ao pesquisar produto";
+                }
+
+                return View("Index",produtos);
+
             }
-            else
-            {
-                return RedirectToAction("Login","Usuario");
-            }
+                
+            return RedirectToAction("Login","Usuario");
+
         }
         public IActionResult Cadastro()
         {
+
             if (HttpContext.Session.GetString("Sessao") != null)
             {
                 return View();
             }
-            else
-            {
-                return RedirectToAction("Login","Usuario");
-            }
+
+            return RedirectToAction("Usuario", "Login");
+
         }
 
         [HttpPost]
@@ -85,46 +77,46 @@ namespace EstoqueMVC.Controllers
 
             if (HttpContext.Session.GetString("Sessao") != null)
             {
-                produto.Nome = txtNome;//parametro
+                produto.Nome = txtNome;
                 produto.Preco = Convert.ToDecimal(txtPreco);
                 produto.Quantidade = Convert.ToInt32(txtQuantidade);
                 produto.Observacoes = txtObservacoes;
 
-                result = produtoDAL.inserirProduto(produto);//recebe o resultado
+                result = produtoDAL.inserirProduto(produto);
 
                 if (result == true)
                 {
-                    TempData["message"] = "Produto cadastrado com sucesso";
+                    TempData["Message"] = "Produto cadastrado com sucesso";
                 }
                 else
                 {
-                    TempData["message"] = "Erro ao cadastrar produto";
+                    TempData["Message"] = "Erro ao cadastrar produtos";
                 }
 
-                return RedirectToAction("Cadastro", "Produto");
+                return RedirectToAction("Menu", "Produto");
+
 
             }
             else
             {
-                return RedirectToAction("Login","Usuario");
+                return RedirectToAction("Usuario", "Login");
             }
-
+            
         }
         public IActionResult Alterar(int id)
         {
-            if (HttpContext.Session.GetString("Sessao") != null)
+            if(HttpContext.Session.GetString("Sessao") != null)
             {
-                idProduto = id;//passa o id selecionado para a variavel
+                idProduto = id;
 
-                var produtos = produtoDAL.pesqProdutoCodigo(idProduto).FirstOrDefault();
+                var produto = produtoDAL.pesqProdutoCodigo(id).FirstOrDefault();
 
-                return View(produtos);
+                return View(produto);
+
             }
-            else
-            {
-                return RedirectToAction("Login","Usuario");
-            }
-
+                
+            return RedirectToAction("Login","Usuario");
+            
         }
 
         [HttpPost]
@@ -155,10 +147,8 @@ namespace EstoqueMVC.Controllers
                 return RedirectToAction("Index", "Produto");
 
             }
-            else
-            {
-                return RedirectToAction("Login","Usuario");    
-            }
+                
+            return RedirectToAction("Login","Usuario");    
 
         }
 
@@ -172,11 +162,9 @@ namespace EstoqueMVC.Controllers
 
                 return View(produtos);
             }
-            else
-            {
-                return RedirectToAction("Login", "Usuario");
-            }
-
+                
+            return RedirectToAction("Login", "Usuario");
+            
         }
 
         [HttpPost]
@@ -200,14 +188,10 @@ namespace EstoqueMVC.Controllers
 
                 return RedirectToAction("Index", "Produto");
             }
-            else
-            {
-                return RedirectToAction("Login","Usuario");
-            }
-
+               
+            return RedirectToAction("Login","Usuario");
+            
         }
-
-
 
     }
 }
