@@ -4,7 +4,7 @@
 <b>1 - Abra o terminal do git no seu computador</b>
 
 
-2 - Execute o comando abaixo
+<b>2 - Execute o comando abaixo</b>
 ``` 
 git clone https://github.com/GuilhermeOliveiraAgenor/EstoqueMVC-CSharp-Razor.git
 ```
